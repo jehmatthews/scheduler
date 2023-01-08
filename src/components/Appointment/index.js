@@ -29,22 +29,22 @@ export default function Appointment(props) {
       student: name,
       interviewer
     };
-    
+
     transition(SAVING);
 
-    Promise.resolve(props.bookInterview(props.id, interview))
+    props
+      .bookInterview(props.id, interview)
       .then(() => transition(SHOW))
+      .catch(error => transition(ERROR_SAVE, true));
   }
 
   function remove () {
     transition(DELETING, true);
     
-    props.cancelInterview(props.id)
+    props
+    .cancelInterview(props.id)
     .then(() => transition(EMPTY))
-    .catch(() => {
-      transition(ERROR_DELETE,true)
-
-     });
+    .catch(error => transition(ERROR_DELETE, true));
   }
 
   return (
@@ -55,20 +55,18 @@ export default function Appointment(props) {
       {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
       {mode === SHOW && (
       <Show
-        interview={props.interview}
+        id={props.id}
+        student={props.interview.student}
+        interviewer={props.interview.interviewer}
         onDelete={() => transition(CONFIRM)}
         onEdit={() => transition(EDIT)}
       /> 
       )}
       {mode === CREATE && (
       <Form
-        interviewer={props.interviewer}
         interviewers={props.interviewers}
 
         onCancel={() => back(EMPTY)}
-
-        bookInterview={props.bookInterview}
-
         onSave={save}
       />
       )}
@@ -86,7 +84,7 @@ export default function Appointment(props) {
       )}
       {mode === EDIT && (
         <Form
-          name={props.name ? props.name : props.interview.student}
+          student={props.interview.student}
           interviewer={props.interview.interviewer.id}
           interviewers={props.interviewers}
           onSave={save}
