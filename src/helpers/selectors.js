@@ -38,4 +38,4 @@ export function getInterviewersForDay(state, name) {
     filteredInterviewers.push(state.interviewers[interviewer]);
   }
   return filteredInterviewers;
-};
+}
