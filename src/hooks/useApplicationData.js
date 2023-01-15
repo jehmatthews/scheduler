@@ -39,11 +39,10 @@ export default function useApplicationData(intial) {
       dayUpdate.spots--
     }
 
-    days.splice(daysIndex, 1, dayUpdate);
     return days;
   }
 
-  const bookInterview = (id, interview) => {
+  const bookInterview = (id, interview, edit = false) => {
 
     const appointment = {
       ...state.appointments[id],
@@ -56,10 +55,10 @@ export default function useApplicationData(intial) {
     };
 
     return axios.put(`/api/appointments/${id}`, { interview })
-      .then(() => { setState({ ...state, appointments, days: updateSpots(state.day, false) }) });
+      .then(() => { setState({ ...state, appointments, days: edit ? state.days: updateSpots(state.day, false) }) });
   };
 
-  const cancelInterview = (id) => {
+  const cancelInterview = id => {
 
     const appointment = {
       ...state.appointments[id],
