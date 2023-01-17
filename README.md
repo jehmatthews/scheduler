@@ -4,7 +4,7 @@ Interview Scheduler is a single-page application (SPA) that allows users to book
 
 ## Setup
 1. Fork this repository and then clone the fork.
-2. Fork and clone the scheduler-api repository, where you will find the scheduler database. https://github.com/edlynshih/scheduler-api
+2. Fork and clone the scheduler-api repository, where you will find the scheduler database. https://github.com/jehmatthews/scheduler-api
 3. Install dependencies with `npm install`.
 4. Two terminals need to be running concurrently for proper operation. One for the scheduler, the other for scheduler-api.
 5. Start scheduler-api first, with `npm start`.
