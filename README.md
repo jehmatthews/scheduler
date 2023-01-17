@@ -13,11 +13,11 @@ Interview Scheduler is a single-page application (SPA) that allows users to book
 
 
 ## Screenshots
-!["Main page with visual of booked slots, and available slots"] (https://github.com/jehmatthews/scheduler/blob/master/docs/mainpage.png?raw=true)
+!["Main page with visual of booked slots, and available slots"](https://github.com/jehmatthews/scheduler/blob/master/docs/mainpage.png?raw=true)
 
-!["Form where you can book, edit and delete an appointment"] (https://github.com/jehmatthews/scheduler/blob/master/docs/appointment-form.png?raw=true)
+!["Form where you can book, edit and delete an appointment"](https://github.com/jehmatthews/scheduler/blob/master/docs/appointment-form.png?raw=true)
 
-!["A visual of the deleting process"] (https://github.com/jehmatthews/scheduler/blob/master/docs/deleting-appt.png?raw=true)
+!["A visual of the deleting process"](https://github.com/jehmatthews/scheduler/blob/master/docs/deleting-appt.png?raw=true)
 
 ## Running Webpack Development Server
 
