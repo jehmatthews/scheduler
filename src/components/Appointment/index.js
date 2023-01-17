@@ -24,6 +24,7 @@ export default function Appointment(props) {
     props.interview ? SHOW : EMPTY
   );
   
+  // will save student name and interviewer
   function save (name, interviewer, edit = false) {
     const interview = {
       student: name,
@@ -38,6 +39,7 @@ export default function Appointment(props) {
       .catch(error => transition(ERROR_SAVE, true));
   }
 
+  // will delete interview
   function remove () {
     transition(DELETING, true);
     
